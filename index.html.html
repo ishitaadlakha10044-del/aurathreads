@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuraThreads | Premium Men's & Unisex Shirts</title>
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a1a1a;
+            --accent: #b8860b;
+            --accent-light: #fdf8e2;
+            --bg-color: #faf9f6;
+            --white: #ffffff;
+            --text-dark: #2c2c2c;
+            --text-muted: #666666;
+            --border-color: #e5e5e5;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .brand-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Top Announcement Bar */
+        .announcement-bar {
+            background-color: var(--primary);
+            color: var(--white);
+            text-align: center;
+            font-size: 0.85rem;
+            padding: 8px 15px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.04);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 30px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--primary);
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .logo-text {
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after, .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .cart-btn {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            position: relative;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .cart-btn:hover {
+            color: var(--accent);
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: -8px;
+            right: -10px;
+            background: var(--accent);
+            color: white;
+            font-size: 0.7rem;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary);
+        }
+
+        /* Page Management Sections */
+        .page-section {
+            display: none;
+            animation: fadeIn 0.4s ease-in-out;
+            min-height: 75vh;
+        }
+
+        .page-section.active-page {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Hero Section (Home Page) */
+        .hero {
+            position: relative;
+            background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            color: var(--white);
+            text-align: center;
+            padding: 130px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+            color: #f0f0f0;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--white);
+            padding: 14px 32px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn:hover {
+            background-color: #996d09;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(184, 134, 11, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--white);
+            color: var(--white);
+            margin-left: 15px;
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--primary);
+        }
+
+        /* Container styling */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 70px 30px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Categories Grid on Home */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .category-card {
+            position: relative;
+            height: 380px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .category-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .category-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .category-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            text-align: left;
+        }
+
+        .category-overlay h3 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        .category-overlay span {
+            font-size: 0.9rem;
+            color: var(--accent);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* About Us Section on Home */
+        .about-section {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 60px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+            margin-bottom: 60px;
+        }
+
+        .about-text h2 {
+            font-size: 2.3rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        /* Product Grids & Cards */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 35px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+        }
+
+        .product-img-wrapper {
+            position: relative;
+            height: 340px;
+            overflow: hidden;
+            background: #f0f0f0;
+        }
+
+        .product-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .product-card:hover .product-img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .product-tag {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--primary);
+            color: white;
+            font-size: 0.75rem;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .product-info {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
+        }
+
+        .product-info h3 {
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+
+        .product-info p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .product-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+
+        .product-price {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .btn-sm {
+            padding: 10px 20px;
+            font-size: 0.85rem;
+        }
+
+        /* Contact Page Styles */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 50px;
+            background: var(--white);
+            border-radius: 12px;
+            padding: 60px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+        }
+
+        .contact-info-box h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .contact-info-box p {
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .contact-item i {
+            font-size: 1.2rem;
+            color: var(--accent);
+            margin-top: 4px;
+        }
+
+        .contact-item h4 {
+            font-size: 1rem;
+            margin-bottom: 3px;
+            color: var(--primary);
+        }
+
+        .contact-item span {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            width: 42px;
+            height: 42px;
+            background: var(--bg-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .contact-form-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: var(--primary);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            background: var(--bg-color);
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: var(--white);
+            box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.1);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            height: 130px;
+        }
+
+        /* Cart Modal */
+        .cart-modal {
+            position: fixed;
+            top: 0;
+            right: -450px;
+            width: 420px;
+            height: 100%;
+            background: var(--white);
+            box-shadow: -5px 0 30px rgba(0,0,0,0.15);
+            z-index: 2000;
+            transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-modal.open {
+            right: 0;
+        }
+
+        .cart-header {
+            padding: 25px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .cart-header h3 {
+            font-size: 1.3rem;
+        }
+
+        .close-cart {
+            background: none;
+            border: none;
+            font-size: 1.3rem;
+            cursor: pointer;
+            color: var(--text-muted);
+            transition: var(--transition);
+        }
+
+        .close-cart:hover {
+            color: var(--primary);
+        }
+
+        .cart-items {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 25px;
+        }
+
+        .cart-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            align-items: center;
+        }
+
+        .cart-item img {
+            width: 70px;
+            height: 85px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .cart-item-details h4 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .cart-item-details p {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .cart-item-remove {
+            background: none;
+            border: none;
+            color: #cc0000;
+            font-size: 0.85rem;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+
+        .cart-footer {
+            padding: 25px;
+            border-top: 1px solid var(--border-color);
+            background: var(--bg-color);
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .cart-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1500;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .cart-overlay.open {
+            display: block;
+            opacity: 1;
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 6px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            z-index: 3000;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .toast i {
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: #cccccc;
+            padding: 60px 30px 30px;
+        }
+
+        .footer-grid {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col h3 {
+            color: var(--white);
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-col p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a {
+            color: #cccccc;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            font-size: 0.9rem;
+            color: #888888;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-section {
+                grid-template-columns: 1fr;
+                padding: 40px;
+            }
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+                padding: 40px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 81px;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                flex-direction: column;
+                padding: 20px 30px;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+                gap: 15px;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .cart-modal {
+                width: 100%;
+                right: -100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        ✨ Complimentary Express Shipping on All Orders Over $75 | Use Code: <strong>AURA20</strong>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="nav-container">
+            <a class="logo" onclick="switchPage('home')">
+                <div class="logo-icon">AT</div>
+                <div class="logo-text">AuraThreads</div>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a onclick="switchPage('home')" id="nav-home" class="active">Home</a></li>
+                <li><a onclick="switchPage('cotton')" id="nav-cotton">Cotton Shirts</a></li>
+                <li><a onclick="switchPage('linen')" id="nav-linen">Linen Shirts</a></li>
+                <li><a onclick="switchPage('rayon')" id="nav-rayon">Rayon Shirts</a></li>
+                <li><a onclick="switchPage('party')" id="nav-party">Party & Formal</a></li>
+                <li><a onclick="switchPage('contact')" id="nav-contact">Contact Us</a></li>
+            </ul>
+            <div class="header-actions">
+                <button class="cart-btn" onclick="toggleCart()" aria-label="Shopping Cart">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart-badge" id="cartCount">0</span>
+                </button>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars" id="menuIcon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= 1. HOME PAGE ================= -->
+    <section id="page-home" class="page-section active-page">
+        <!-- Hero -->
+        <div class="hero">
+            <div class="hero-content">
+                <h1>Redefining Modern Elegance</h1>
+                <p>Discover our meticulously crafted collection of premium shirts tailored for exceptional comfort, timeless style, and uncompromising quality.</p>
+                <div>
+                    <button class="btn" onclick="switchPage('cotton')">Explore Collection</button>
+                    <button class="btn btn-outline" onclick="switchPage('contact')">Get in Touch</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Categories Section -->
+        <div class="container">
+            <div class="section-header">
+                <h2>Shop By Category</h2>
+                <p>Explore our signature lines tailored for every occasion and season.</p>
+            </div>
+            <div class="categories-grid">
+                <div class="category-card" onclick="switchPage('cotton')">
+                    <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=600&q=80" alt="Cotton Shirts">
+                    <div class="category-overlay">
+                        <h3>Cotton Shirts</h3>
+                        <span>Shop Collection <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </div>
+                <div class="category-card" onclick="switchPage('linen')">
+                    <img src="https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=600&q=80" alt="Linen Shirts">
+                    <div class="category-overlay">
+                        <h3>Linen Shirts</h3>
+                        <span>Shop Collection <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </div>
+                <div class="category-card" onclick="switchPage('rayon')">
+                    <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=600&q=80" alt="Rayon Shirts">
+                    <div class="category-overlay">
+                        <h3>Rayon Shirts</h3>
+                        <span>Shop Collection <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </div>
+                <div class="category-card" onclick="switchPage('party')">
+                    <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80" alt="Party & Formal Shirts">
+                    <div class="category-overlay">
+                        <h3>Party & Formal</h3>
+                        <span>Shop Collection <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- About Us Section -->
+            <div class="about-section">
+                <div class="about-text">
+                    <h2>About AuraThreads</h2>
+                    <p>Founded with a passion for exceptional tailoring and sustainable luxury, AuraThreads bridges the gap between classic sophistication and contemporary streetwear sensibility. Every single shirt in our catalog goes through rigorous quality checks, utilizing ethically sourced organic fabrics that breathe effortlessly and feel incredible against your skin.</p>
+                    <p>Whether you're dressing up for a boardroom presentation, unwinding at a beachside resort, or stepping out for an evening gala, our curated collections ensure you make an unforgettable statement.</p>
+                    <button class="btn btn-sm" onclick="switchPage('contact')">Contact Our Team</button>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80" alt="Tailoring Craftsmanship">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= 2. PRODUCT CATEGORY 1: COTTON SHIRTS ================= -->
+    <section id="page-cotton" class="page-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Pure Cotton Shirts</h2>
+                <p>Breathable, durable, and effortlessly classic. Crafted from 100% long-staple organic cotton for all-day luxury.</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <span class="product-tag">Bestseller</span>
+                        <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=600&q=80" alt="Classic Oxford White Cotton Shirt">
+                    </div>
+                    <div class="product-info">
+                        <div>
+                            <h3>Classic Oxford White Cotton</h3>
+                            <p>Timeless tailored fit with a refined button-down collar. Wrinkle-resistant finish.</p>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$68.00</span>
+                            <button class="btn btn-sm" onclick="addToCart('Classic Oxford White Cotton', 68.00, 'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=600&q=80')">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <span class="product-tag">New Arrival</span>
+                        <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=600&q=80" alt="Sky Blue Business Cotton Shirt">
+                    </div>
+                    <div class="product-info">
+                        <div>
+                            <h3>Sky Blue Business Twill</h3>
+                            <p>Crisp diagonal weave cotton offering superior softness and professional polish.</p>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$72.00</span>
+                            <button class="btn btn-sm" onclick="addToCart('Sky Blue Business Twill', 72.00, 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=600&q=80')">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <span class="product-tag">Popular</span>
+                        <img src="https://images.unsplash.com/photo-1589310243389-96a5483213a8?auto=format&fit=crop&w=600&q=80" alt="Navy Tailored Cotton Shirt">
+                    </div>
+                    <div class="product-info">
+                        <div>
+                            <h3>Midnight Navy Poplin</h3>
+                            <p>Lightweight cotton poplin with a smooth silky texture and modern slim silhouette.</p>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$65.00</span>
+                            <button class="btn btn-sm" onclick="addToCart('Midnight Navy Poplin', 65.00, 'https://images.unsplash.com/photo-1589310243389-96a5483213a8?auto=format&fit=crop&w=600&q=80')">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=600&q=80" alt="Checked Casual Cotton Shirt">
+                    </div>
+                    <div class="product-info">
+                        <div>
+                            <h3>Heritage Plaid Cotton</h3>
+                            <p>Soft brushed flannel cotton featuring understated autumn check patterns.</p>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$75.00</span>
+                            <button class="btn btn-sm" onclick="addToCart('Heritage Plaid Cotton', 75.00, 'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=600&q=80')">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= 3. PRODUCT CATEGORY 2: LINEN SHIRTS ================= -->
+    <section id="page-linen" class="page-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Relaxed Linen Shirts</h2>
+                <p>Airy, lightweight, and effortlessly chic. Woven from premium European flax for warm-weather luxury.</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <span class="product-tag">Summer Essential</span>
+                        <img src="https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=600&q=80" alt="Sand Beach Linen Shirt">
+                    </div>
+                    <div class="product-info">
+                        <div>
+                            <h3>Sahara Sand Pure Linen</h3>
+                            <p>Relaxed resort fit with natural slub texture for ultimate warm-weather comfort.</p>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$82.00</span>
+                            <button class="btn btn-sm" onclick="addToCart('Sahara Sand Pure Linen', 82.00, 'https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=600&q=80')">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <span class="product-tag">Best Seller</span>
+                        <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=600&q=80" alt="Olive Green Linen Shirt">
+                    </div>
+                    <div class="product-info">
+                        <div>
+                            <h3>Botanical Olive Linen</h3>
+                            <p>Earth-toned washed linen designed for effortless weekend layering.</p>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$85.00</span>
+                            <button class="btn btn-sm" onclick="addToCart('Botanical Olive Linen', 85.00, 'https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=600&q=80')">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80" alt="Charcoal Resort Linen">
+                    </div>
+                    <div class="product-info">
+                        <div>
+                            <h3>Charcoal Sunset Linen</h3>
+                            <p>Sophisticated dark flax linen with coconut shell buttons and mandarin collar option.</p>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$88.00</span>
+                            <button class="btn btn-sm" onclick="addToCart('Charcoal Sunset Linen', 88.00, 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80')">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <span class="product-tag">New</span>
+                        <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=600&q=80" alt="Optic White Linen">
+                    </div>
+                    <div class="product-info">
+                        <div>
+                            <h3>Riviera White Linen</h3>
+                            <p>Ultra-lightweight crisp white linen for coastal getaways and sunny afternoons.</p>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$80.00</span>
+                            <button class="btn btn-sm" onclick="addToCart('Riviera White Linen', 80.00, 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=600&q=80')">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= 4. PRODUCT CATEGORY 3: RAYON SHIRTS ================= -->
+    <section id="page-rayon" class="page-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Silky Rayon Shirts</h2>
+                <p>Fluid drape, silky luster, and vibrant prints. Engineered for expressive casual style and vacation vibes.</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <span class="product-tag">Trending</span>
+                        <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=600&q=80" alt="Tropical Botanical Rayon Shirt">
+                    </div>
+                    <div class="product-info">
+                        <div>
+                            <h3>Tropical Palm Rayon</h3>
+                            <p>Silky soft modal-rayon blend featuring bespoke vintage botanical prints.</p>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$58.00</span>
+                            <button class="btn btn-sm" onclick="addToCart('Tropical Palm Rayon', 58.00, 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=600&q=80')">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=600&q=80" alt="Cuban Collar Black Rayon">
+                    </div>
+                    <div class="product-info">
+                        <div>
+                            <h3>Noir Cuban Collar Rayon</h3>
+                            <p>Retro camp-collar design with an incredible fluid drape and smooth hand-feel.</p>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$62.00</span>
+                            <button class="btn btn-sm" onclick="addToCart('Noir Cuban Collar Rayon', 62.00, 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=600&q=80')">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <span class="product-tag">Limited</span>
+                        <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=600&q=80" alt="Sunset Ombre Rayon">
+                    </div>
+                    <div class="product-info">
+                        <div>
+                            <h3>Sunset Gradient Rayon</h3>
+                            <p>Hand-dyed gradient colorway offering artistic flair and lightweight comfort.</p>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$66.00</span>
+                            <button class="btn btn-sm" onclick="addToCart('Sunset Gradient Rayon', 66.00, 'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=600&q=80')">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=600&q=80" alt="Abstract Geometric Rayon">
+                    </div>
+                    <div class="product-info">
+                        <div>
+                            <h3>Abstract Art Rayon</h3>
+                            <p>Modern artistic geometric motif printed on silky lightweight sustainable rayon.</p>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$60.00</span>
+                            <button class="btn btn-sm" onclick="addToCart('Abstract Art Rayon', 60.00, 'https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=600&q=80')">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= 5. PRODUCT CATEGORY 4: PARTY & FORMAL SHIRTS ================= -->
+    <section id="page-party" class="page-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Party & Formal Shirts</h2>
+                <p>Designed for special occasions, galas, weddings, and high-stakes executive boardrooms.</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <span class="product-tag">Executive</span>
+                        <img src="https://images.unsplash.com/photo-1621072156002-e2fccdc0b176?auto=format&fit=crop&w=600&q=80" alt="Silk Blend Formal Shirt">
+                    </div>
+                    <div class="product-info">
+                        <div>
+                            <h3>Executive Black Silk-Blend</h3>
+                            <p>Subtle sheen, tailored French cuffs, and structured collar for elite black-tie events.</p>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$95.00</span>
+                            <button class="btn btn-sm" onclick="addToCart('Executive Black Silk-Blend', 95.00, 'https://images.unsplash.com/photo-1621072156002-e2fccdc0b176?auto=format&fit=crop&w=600&q=80')">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <span class="product-tag">Gala Pick</span>
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80" alt="Velvet Trim Tuxedo Shirt">
+                    </div>
+                    <div class="product-info">
+                        <div>
+                            <h3>Velvet Accent Tuxedo Shirt</h3>
+                            <p>Crisp pleated front bib with elegant button concealment for ultimate gala attire.</p>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$110.00</span>
+                            <button class="btn btn-sm" onclick="addToCart('Velvet Accent Tuxedo Shirt', 110.00, 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80')">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <span class="product-tag">Cocktail</span>
+                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80" alt="Burgundy Satin Party Shirt">
+                    </div>
+                    <div class="product-info">
+                        <div>
+                            <h3>Burgundy Luxe Satin</h3>
+                            <p>Rich jewel-toned satin weave that catches light beautifully for evening soirées.</p>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$89.00</span>
+                            <button class="btn btn-sm" onclick="addToCart('Burgundy Luxe Satin', 89.00, 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80')">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=600&q=80" alt="Metallic Brocade Party Shirt">
+                    </div>
+                    <div class="product-info">
+                        <div>
+                            <h3>Midnight Metallic Brocade</h3>
+                            <p>Statement evening wear featuring subtle woven metallic threading and slim fit.</p>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$125.00</span>
+                            <button class="btn btn-sm" onclick="addToCart('Midnight Metallic Brocade', 125.00, 'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=600&q=80')">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= 6. CONTACT US PAGE ================= -->
+    <section id="page-contact" class="page-section">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info-box">
+                    <h2>Let’s Connect</h2>
+                    <p>Have questions about sizing, bespoke orders, or shipping? Our concierge team is here to assist you.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <div>
+                                <h4>Headquarters</h4>
+                                <span>742 Evergreen Terrace, Suite 400<br>New York, NY 10001, USA</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-solid fa-envelope"></i>
+                            <div>
+                                <h4>Email Us</h4>
+                                <span>support@aurathreads.com</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-solid fa-phone"></i>
+                            <div>
+                                <h4>Call Us</h4>
+                                <span>+1 (800) 555-AURA (2872)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4 style="margin-bottom: 15px; color: var(--primary);">Follow Our Journey</h4>
+                    <div class="social-links">
+                        <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-form-box">
+                    <h3>Send an Enquiry</h3>
+                    <form id="enquiryForm" onsubmit="handleEnquiry(event)">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" class="form-control" placeholder="How can we help you?" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" class="form-control" placeholder="Type your message here..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%;">Submit Enquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Modal -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-header">
+            <h3>Your Shopping Bag</h3>
+            <button class="close-cart" onclick="toggleCart()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-items" id="cartItemsContainer">
+            <p style="color: var(--text-muted); text-align: center; margin-top: 40px;">Your bag is currently empty.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Subtotal:</span>
+                <span id="cartSubtotal">$0.00</span>
+            </div>
+            <button class="btn" style="width: 100%;" onclick="checkout()">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toastBox">
+        <i class="fa-solid fa-circle-check"></i>
+        <span id="toastMessage">Item added to your shopping bag!</span>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="logo" style="margin-bottom: 20px;">
+                    <div class="logo-icon">AT</div>
+                    <div class="logo-text" style="color: white;">AuraThreads</div>
+                </div>
+                <p>AuraThreads represents the pinnacle of modern shirt craftsmanship. Designed for individuals who appreciate refined fabrics, sustainable sourcing, and impeccable fits.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a onclick="switchPage('home')">Home</a></li>
+                    <li><a onclick="switchPage('cotton')">Cotton Shirts</a></li>
+                    <li><a onclick="switchPage('linen')">Linen Shirts</a></li>
+                    <li><a onclick="switchPage('rayon')">Rayon Shirts</a></li>
+                    <li><a onclick="switchPage('party')">Party & Formal</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Customer Care</h3>
+                <ul>
+                    <li><a onclick="switchPage('contact')">Help Center & FAQ</a></li>
+                    <li><a onclick="switchPage('contact')">Shipping & Returns</a></li>
+                    <li><a onclick="switchPage('contact')">Size Guide</a></li>
+                    <li><a onclick="switchPage('contact')">Track Order</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Newsletter</h3>
+                <p>Subscribe to receive exclusive offers, early access to new collections, and style guides.</p>
+                <div style="display: flex; gap: 10px;">
+                    <input type="email" placeholder="Your email" class="form-control" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.2); color: white;">
+                    <button class="btn" style="padding: 0 15px;" onclick="showToast('Thank you for subscribing!')">Join</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 AuraThreads Inc. All rights reserved. Designed with precision & elegance.
+        </div>
+    </footer>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        let cart = [];
+
+        function switchPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page-section').forEach(sec => {
+                sec.classList.remove('active-page');
+            });
+            // Show requested page
+            document.getElementById('page-' + pageId).classList.add('active-page');
+            
+            // Update active nav link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+            });
+            const activeNav = document.getElementById('nav-' + pageId);
+            if(activeNav) activeNav.classList.add('active');
+
+            // Close mobile menu if open
+            document.getElementById('navLinks').classList.remove('active');
+            document.getElementById('menuIcon').className = "fa-solid fa-bars";
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function toggleMobileMenu() {
+            const nav = document.getElementById('navLinks');
+            const icon = document.getElementById('menuIcon');
+            nav.classList.toggle('active');
+            if(nav.classList.contains('active')) {
+                icon.className = "fa-solid fa-xmark";
+            } else {
+                icon.className = "fa-solid fa-bars";
+            }
+        }
+
+        function toggleCart() {
+            document.getElementById('cartModal').classList.toggle('open');
+            document.getElementById('cartOverlay').classList.toggle('open');
+        }
+
+        function addToCart(name, price, img) {
+            const existing = cart.find(item => item.name === name);
+            if(existing) {
+                existing.qty += 1;
+            } else {
+                cart.push({ name, price, img, qty: 1 });
+            }
+            updateCartUI();
+            showToast(`Added "${name}" to your bag!`);
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const container = document.getElementById('cartItemsContainer');
+            const badge = document.getElementById('cartCount');
+            const subtotalEl = document.getElementById('cartSubtotal');
+
+            const totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
+            badge.innerText = totalCount;
+
+            if(cart.length === 0) {
+                container.innerHTML = '<p style="color: var(--text-muted); text-align: center; margin-top: 40px;">Your bag is currently empty.</p>';
+                subtotalEl.innerText = '$0.00';
+                return;
+            }
+
+            let html = '';
+            let subtotal = 0;
+
+            cart.forEach((item, index) => {
+                subtotal += item.price * item.qty;
+                html += `
+                    <div class="cart-item">
+                        <img src="${item.img}" alt="${item.name}">
+                        <div class="cart-item-details" style="flex-grow: 1;">
+                            <h4>${item.name}</h4>
+                            <p>$${item.price.toFixed(2)} x ${item.qty}</p>
+                            <button class="cart-item-remove" onclick="removeFromCart(${index})">Remove</button>
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+            subtotalEl.innerText = '$' + subtotal.toFixed(2);
+        }
+
+        function checkout() {
+            if(cart.length === 0) {
+                alert('Your shopping bag is empty.');
+                return;
+            }
+            alert('Thank you for your order! Redirecting to secure checkout...');
+            cart = [];
+            updateCartUI();
+            toggleCart();
+        }
+
+        function handleEnquiry(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            showToast(`Thank you ${name}! Your enquiry has been sent successfully.`);
+            document.getElementById('enquiryForm').reset();
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toastBox');
+            const msg = document.getElementById('toastMessage');
+            msg.innerText = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('main-class');
+                toast.classList.remove('show');
+            }, 3500);
+        }
+    </script>
+</body>
+</html>
